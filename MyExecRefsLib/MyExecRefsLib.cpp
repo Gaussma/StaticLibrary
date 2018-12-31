@@ -16,8 +16,8 @@ int main()
 
 #include <iostream>
 
-#include "MathFuncsLib.h"
-
+//#include "MathFuncsLib.h"
+#include "../MathFuncsLib/MathFuncsLib.h"
 
 
 
