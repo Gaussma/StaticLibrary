@@ -1,6 +1,6 @@
 #include <iostream>
 
-//#include "MathFuncsLib.h"
+//#include "MathFuncsLib.h" // this is wrong !  
 #include "../MathFuncsLib/LinkedList.h"
 
 using namespace std;
