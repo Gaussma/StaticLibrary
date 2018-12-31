@@ -9,7 +9,7 @@
 #     cmake c:\projects\source -G "Visual Studio 15"
 #     cmake --build . --config "Debug"
 
- Notes:
+ #Notes:
 
 #   - Minimal appveyor.yml file is an empty file. All sections are optional.
 
