@@ -63,6 +63,105 @@ Project-> Properties->Linker -> Additional Library Dependencies :  C:\Libraries\
 
 
 
+Jan 1, 2019 
+Sum up: 
+
+ 1. We do not need to upload the Debug\ folder to appveyor. 
+ 2. The File we only need.   .sln is the solution , .cpp file,  The .vcxproj project file, .vcxproj.filters file. and .h and .cpp files built the lib.   
+
+ 3. The enviroment should match between Visual Studio and Appveyor. such as C:\Libraries\boost_1_64_0 
+  otherwise, we can set the enviroment variables. 
+Task: 
+  4. WE need to see the test are run in Appveyor 
+  5. Use a complicated example to call boost !  
+
+
+
+
+
+  Things I try : 
+   1. Build in X86 , Release in VS 2017 in local computer, to check whether it is still working ! 
+(currently only link to C:\Libraries\boost_1_64_0;) NOT library, well this try means nothing since we do not call library.  This is 1.0.94 version of StaticLibrary . IT is working.  But it do not say much !
+
+
+   2. 
+
+
+   Jan 3, 2019  
+
+     So far we can successfully built the project on the appveyor.   
+Task: 
+    1. Run the test on Appveyor 
+    2. run a complicated test call boost library on Appveyor !  
+Procedure: 
+ 1) I add sync_time.cpp file , 
+
+ 1>LINK : fatal error LNK1104: cannot open file 'libboost_system-vc141-mt-x32-1_68.lib'  
+
+ Now I copy this libboost_system-vc141-mt-x32-1_68.lib'  to the folder "C:\Libraries\boost_1_64_0\lib64-msvc-14.1".
+ Current platform in VS 2017 is Release x86.  
+
+
+Then : 
+1>LINK : fatal error LNK1104: cannot open file 'libboost_regex-vc141-mt-x32-1_68.lib'
+
+
+1>LINK : fatal error LNK1104: cannot open file 'libboost_date-time-vc141-mt-x32-1_68.lib'
+
+
+Now I switch to platform Release x64, 
+it has error : 
+1>------ Build started: Project: MyExecRefsLib, Configuration: Release x64 ------
+1>LINK : fatal error LNK1104: cannot open file 'libboost_system-vc141-mt-x64-1_68.lib'
+1>Done building project "MyExecRefsLib.vcxproj" -- FAILED.
+
+
+Conclusion 1:  different platform (Debug/Release, x86/x64) need different version of boost lib !  
+
+Double check : 
+when set the platform : "Debug x64 "
+2>LINK : fatal error LNK1104: cannot open file 'libboost_system-vc141-mt-gd-x64-1_68.lib'
+
+
+When set the platform :: "Debg x86"
+1>LINK : fatal error LNK1104: cannot open file 'libboost_system-vc141-mt-gd-x32-1_68.lib'
+
+
+Conclusion 2: Our boost library complete is for various platforms , 
+Debug/Release , x86/x64  !  
+
+platform vesion and boost version should match ! 
+
+Ref:   https://www.codeproject.com/Articles/1084565/%2FArticles%2F1084565%2FCplusplus-Continuous-Integration-Setup
+
+os: Visual Studio 2015
+
+# Boost is already installed on AppVeyor.
+environment:
+  BOOST_ROOT: C:\Libraries\boost_1_59_0
+  BOOST_LIBRARYDIR: C:\Libraries\boost_1_59_0\lib64-msvc-14.0
+(so we believe this folder is for release version, x64)
+build_script:
+  - md build
+  - cd build
+  - cmake -G "Visual Studio 14 2015 Win64" ..
+  - cmake --build . --config Release
+  - ctest
+
+
+  We update it to   (Release , x64)
+
+  environment:
+  BOOST_ROOT: C:\Libraries\boost_1_64_0
+  BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.1
+
+Ref: https://www.appveyor.com/docs/windows-images-software/#boost
+
+Shows boost_1_64_0 is feasible to Visual Studio 2017!  
+
+
+
+
 
 
 
