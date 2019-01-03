@@ -224,6 +224,33 @@ Ref: Set enviroment variables !
 https://stackoverflow.com/questions/100543/how-do-i-set-specific-environment-variables-when-debugging-in-visual-studio  
 
 
+https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-environment-variables-in-a-build?view=vs-2017
+
+<BOOST_ROOT Condition="'$(BOOST_ROOT)' == ''">C:\Libraries\boost_1_59_0
+</BOOST_ROOT>
+
+
+*********************************
+
+Set up the System environment variables: 
+Search "env " then -> edit system enviroment variables: 
+Enviroment variables-> Edit System variables 
+
+
+ADD: 
+BOOST_ROOT: C:\Libraries\boost_1_64_0
+BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.1
+
+Then in the project : properties 
+  C/C++  :  $(BOOST_ROOT)
+  LINKER: $(BOOST_LIBRARYDIR) 
+
+
+  Clearly, in 1.0.121  , if we do not set the corresponding 
+  enviroment variables in appveyor, it is not working. 
+  Now I set the enviroment variables in appveyor. 
+
+
 
 
 
