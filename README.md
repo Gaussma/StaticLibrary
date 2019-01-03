@@ -159,6 +159,9 @@ Ref: https://www.appveyor.com/docs/windows-images-software/#boost
 
 Shows boost_1_64_0 is feasible to Visual Studio 2017!  
 
+Currently github version of built is Relase, x64 !  
+
+
 
 
 
