@@ -165,6 +165,17 @@ On version 1.0.105, we delete the
 BOOST_ROOT: C:\Libraries\boost_1_64_0
  (Del) BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.1
 But it is still can built success ? 
+The answer is yes ! 
+
+How about delete 
+ BOOST_ROOT: C:\Libraries\boost_1_64_0 in enviroment settings? 
+
+ The answer is yes !  
+
+ So the library path is identical between our computer and 
+ appveyor ! 
+
+
 
 
 
