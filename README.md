@@ -161,6 +161,10 @@ Shows boost_1_64_0 is feasible to Visual Studio 2017!
 
 Currently github version of built is Relase, x64 !  
 
+On version 1.0.105, we delete the 
+BOOST_ROOT: C:\Libraries\boost_1_64_0
+ (Del) BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.1
+But it is still can built success ? 
 
 
 
