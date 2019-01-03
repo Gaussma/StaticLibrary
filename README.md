@@ -89,6 +89,9 @@ Task:
 
    Jan 3, 2019  
 
+   Ref: code can call boost test lib
+   https://www.bogotobogo.com/cplusplus/Boost/boost_AsynchIO_asio_tcpip_socket_server_client_timer_A.php
+
      So far we can successfully built the project on the appveyor.   
 Task: 
     1. Run the test on Appveyor 
@@ -191,6 +194,35 @@ stage_86/lib can be another name !
 
 
 Again, without any enviroment setting, the both platform and boost lib must be identical to build successful !  
+
+
+
+After talk at 12:26PM  : 
+
+1. Switch Release and Debug, the apprevey can run automatically using the shared memory, .cpp and .vcxproj. 
+
+https://ci.appveyor.com/project/XiaoyaoMa/staticlibrary  
+Version : 1.0.119  
+vcxproj file does not contain the info of (platform info : release, debug, x86, x64), it contains the info from linker ! 
+
+Now, it shows Debug version on Appveyor is OK.  
+
+Now switch to Release version. 
+it is also working 1.0.120  version.  
+
+The conclusion is that both libboost-xxx for release and debug version are located in lib64-msvc-14.1 folder.  
+
+
+
+
+2. I have two things to check. .vcxproj files only contains info of cpp and linker, not the platform info . 
+Goal is one CPP and .vcxproj file, make appreyor works both 32 and 64. Note .vcxproj files contains the library location info. 
+If I make a copy of lib64-msvc-14.1 to lib32-msvc-14.1 , it works on x86 in local and appveyor ,but I need to update the 
+linker, this leads the changes of .vcxproj file.  
+
+Ref: Set enviroment variables !  
+https://stackoverflow.com/questions/100543/how-do-i-set-specific-environment-variables-when-debugging-in-visual-studio  
+
 
 
 
