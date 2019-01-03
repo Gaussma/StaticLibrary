@@ -184,6 +184,15 @@ WHen I update setting in appveyor is x86, and change the boost lib name to lib32
 
 
 
+Question: how to make this more intelligent ? 
+
+Use Enviroment variable !  Boost_1_64_0 can be Boost, and 
+stage_86/lib can be another name !   
+
+
+Again, without any enviroment setting, the both platform and boost lib must be identical to build successful !  
+
+
 
 
 
