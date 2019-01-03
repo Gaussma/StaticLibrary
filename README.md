@@ -250,6 +250,20 @@ Then in the project : properties
   enviroment variables in appveyor, it is not working. 
   Now I set the enviroment variables in appveyor. 
 
+  1.0.128  version in appveyor is working. the setting is Release 64. 
+
+  Now I change the setting to Debug x64, the environment variable keep the same. to See 1.0.129 is working !
+
+
+  Now I change the setting to Release x86, and updating the 
+ BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib32-msvc-14.1
+
+To see whether it is working ,  
+NO, it is not working. 
+c:\projects\myproject\Release\MyExecRefsLib.exe : fatal error LNK1120: 2 unresolved externals [c:\projects\myproject\MyExecRefsLib\MyExecRefsLib.vcxproj]
+
+Now I do an update !  
+
 
 
 
