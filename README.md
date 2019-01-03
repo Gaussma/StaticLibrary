@@ -178,6 +178,9 @@ How about delete
 Now: I want to try whether Release , x86 works or not in appveyor ? in the same setting that linker links to 
 C:\Libraries\boost_1_64_0\lib64-msvc-14.1   . 
 
+The answer is NO. Since the setting in appveyor is x64. 
+
+WHen I update setting in appveyor is x86, and change the boost lib name to lib32-msvc-14.1 , things get worked.  
 
 
 
