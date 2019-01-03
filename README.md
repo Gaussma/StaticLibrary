@@ -175,6 +175,10 @@ How about delete
  So the library path is identical between our computer and 
  appveyor ! 
 
+Now: I want to try whether Release , x86 works or not in appveyor ? in the same setting that linker links to 
+C:\Libraries\boost_1_64_0\lib64-msvc-14.1   . 
+
+
 
 
 
