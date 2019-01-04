@@ -315,6 +315,33 @@ where is the BOOST, and BOOST_library !
 
 
 
+Now I finish all the built in Local for 4 platforms, by setting enviroment variables $(BOOST_ROOT) and $(BOOST_LIBRARYDIR) to the C/C++ and Linker.  ! 
+
+
+Now We do a final check : 
+In appveyor 
+https://ci.appveyor.com/project/XiaoyaoMa/staticlibrary
+
+BOOST_ROOT: C:\Libraries\boost_1_64_0
+BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib32-msvc-14.1
+
+Debug x86  (Built success! 1.0.133)
+Release x86 (Built success !1.0.134)
+
+
+
+
+BOOST_ROOT: C:\Libraries\boost_1_64_0
+BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.1
+
+Debug x64 (Build success : 1.0.135)
+Release x64  (Build success: 1.0.136 )
+
+
+D
+
+
+
 
 
 
