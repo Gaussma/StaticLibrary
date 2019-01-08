@@ -83,6 +83,7 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>C:\Users\Xiaoyao\Documents\ThirdParty\StaticLibrary\MathFuncsLib;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Xiaoyao\Documents\ThirdParty\StaticLibrary\MathFuncsLib\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>bin\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
