@@ -163,7 +163,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(BOOST_LIBRARYDIR);%(AdditionalLibraryDirectories); (MathLib)\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST_LIBRARYDIR);%(AdditionalLibraryDirectories); </AdditionalLibraryDirectories>
       <AdditionalDependencies>..\MathFuncsLib\lib\MathFuncsLib--x64-mt-gd.lib</AdditionalDependencies>
     </Link>
     <Xdcmake>
