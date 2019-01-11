@@ -336,6 +336,13 @@ Jan 4. Now I switch back to boosttest_linkedlist.cpp
 
 Jan6 : Now I want to built the lib of MathFuncsLib first, then boostTest_LinkedList.cpp call this library directly without rebuild it again.  
 
+before change: 
+
+General: Output Directory:  $(SolutionDir)$(Platform)\$(Configuration)\
+
+
+
+
 
 
 
